@@ -1,0 +1,12 @@
+
+remove lock = Caps_Lock
+remove mod1 = Alt_R
+remove control = Control_R
+
+keycode 108 = Caps_Lock
+keycode 66 = Control_R
+keycode 49 = Escape
+keycode 9 = grave asciitilde
+
+add control = Control_R
+add lock = Caps_Lock

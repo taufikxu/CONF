@@ -1,0 +1,22 @@
+[global]
+device = gpu
+force_device = True
+floatX = float32
+# compute_test_value=raise
+
+[blas]
+# ldflags = -L/usr/lib -lopenblas
+ldflags = -L/mfs/jianfei/intel/parallel-2015/composer_xe_2015.2.164/mkl/lib/intel64 -lmkl_rt
+
+[cuda]
+root = /usr/local/cuda
+
+[dnn.conv]
+algo_fwd_filter = guess_once
+algo_fwd_data = guess_once
+algo_bwd_filter = guess_once
+algo_bwd_data = guess_once
+
+[nvcc]
+fastmath = True
+

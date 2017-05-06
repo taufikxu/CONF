@@ -1,0 +1,64 @@
+LN_HOME=/home/kunxu/mfs/CONF/
+export ZSH=$LN_HOME/zshrc/oh-my-zsh
+. $LN_HOME/zshrc/zshrc_app
+#source $LN_HOME/zshrc/incr.zsh
+
+export LC_ALL=C
+alias nvis='nvidia-smi'
+
+alias env='source /home/kunxu/ENV/bin/activate'
+alias menv='source /home/kunxu/mfs/ENV/ENV/bin/activate'
+
+alias ntmux='$LN_HOME/others/tmux_new.sh'
+alias rm='trash'
+
+alias go='cd /home/kunxu/mfs/workspace/'
+
+
+# Add for Cuda
+export PATH=/usr/local/cuda/bin:$PATH
+export CUDA_ROOT=/usr/local/cuda
+export CUDA_HOME=/usr/local/cuda
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/opt/OpenBLAS/lib:$LD_LIBRARY_PATH
+export PYTHONPATH=/opt/OpenBLAS/lib:$PYTHONPATH
+export PYTHONPATH=/usr/local/cuda/lib64:$PYTHONPATH
+export CPATH=/opt/OpenBLAS:$CPATH
+
+export TMPLD_LIBRARY_PATH=$LD_LIBRARY_PATH
+export TMPLIBRARY_PATH=$LIBRARY_PATH
+export TMPCPATH=$CPATH
+
+# add for caffe
+# export PATH=/home/kunxu/mfs/caffe/build/tools/:$PATH
+# export PYTHONPATH=/home/kunxu/mfs/caffe/python:$PYTHONPATH
+
+# mkl
+source /mfs/jianfei/intel/parallel-2015/bin/iccvars.sh intel64
+source /mfs/jianfei/intel/parallel-2015/mkl/bin/mklvars.sh intel64
+source /mfs/jianfei/intel/parallel-2015/vtune_amplifier_xe_2015.2.0.393444/amplxe-vars.sh
+export LD_LIBRARY_PATH=/mfs/jianfei/intel/parallel-2015/composer_xe_2015.2.164/compiler/lib/intel64:/mfs/jianfei/intel/parallel-2015/composer_xe_2015.2.164/mkl/lib/intel64:$LD_LIBRARY_PATH
+
+# for my bin
+export PATH=/home/kunxu/mfs/ENV/mbin:$PATH
+
+# theano
+export THEANORC=$HOME/mfs/CONF/others/theanorc
+alias gpu0='export CUDA_VISIBLE_DEVICES=0'
+alias gpu1='export CUDA_VISIBLE_DEVICES=1'
+alias gpu2='export CUDA_VISIBLE_DEVICES=2'
+alias gpu3='export CUDA_VISIBLE_DEVICES=3'
+
+function usev4 () {
+    export LD_LIBRARY_PATH=/opt/cudnn-v4/lib64:$TMPLD_LIBRARY_PATH
+    export LIBRARY_PATH=/opt/cudnn-v4/lib64:$TMPLIBRARY_PATH
+    export CPATH=/opt/cudnn-v4/include:$TMPCPATH
+}
+function usev5 () {
+    export LD_LIBRARY_PATH=/opt/cudnn/lib64:$TMPLD_LIBRARY_PATH
+    export LIBRARY_PATH=/opt/cudnn/lib64:$TMPLIBRARY_PATH
+    export CPATH=/opt/cudnn/include:$TMPCPATH
+}
+usev5
+
+alias showall='ansible jungpu -a "nvidia-who"'

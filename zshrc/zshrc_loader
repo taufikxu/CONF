@@ -1,0 +1,7 @@
+# include shared zshrc if it exists
+if [ -f "$HOME/mfs/CONF/zshrc/zshrc_server" ]; then
+    source $HOME/mfs/CONF/zshrc/zshrc_server
+else
+    echo "\n$(tput setaf 3)WARNING!! shared zshrc not loaded.$(tput sgr 0)\n"
+fi
+

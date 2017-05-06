@@ -1,0 +1,19 @@
+export LN_HOME=/mnt/e/Remote/CONF
+ZSH_HOME=$LN_HOME/zshrc
+export ZSH=$ZSH_HOME/oh-my-zsh
+. $ZSH_HOME/zshrc_app
+
+
+#for sync
+EXCLUDE='/mnt/e/Remote/CONF/others/exclude_rsync'
+REMOT='jungpu1:/home/kunxu/mfs'
+LOCAL='/mnt/e/Remote'
+alias syupd='rsync -avz --exclude-from=$EXCLUDE --delete $LOCAL/ $REMOT/'
+alias syup='rsync -avz --exclude-from=$EXCLUDE $LOCAL/ $REMOT/'
+alias sydod='rsync -avz --exclude-from=$EXCLUDE --delete $REMOT/ $LOCAL/'
+alias sydo='rsync -avz --exclude-from=$EXCLUDE $REMOT/ $LOCAL/'
+alias CONFdo='rsync -avz --delete $REMOT/CONF/ $LOCAL/CONF'
+alias CONFup='rsync -avz --delete $LOCAL/CONF/ $REMOT/CONF'
+
+
+

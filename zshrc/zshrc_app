@@ -1,0 +1,96 @@
+# Assuming lm-sensors is installed and configured
+. /etc/zsh_command_not_found
+
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# enable color for gnome-terminal
+if [ -x $HOME/.dircolors ]; then
+    test -r $HOME/.dircolors && eval "$(dircolors -b $HOME/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
+ 
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+# alias for special files
+alias -s py='python'
+# alias for disk useage
+alias duh='du -h --max-depth=1'
+alias wcl='find . -type f|wc -l'
+# alias for tmux
+alias tmux="tmux -2 -u"
+alias tat="tmux attach -t"
+alias ta="tmux attach"
+alias tl="tmux ls"
+# Safe RM
+alias rm="trash"
+alias sudorm="/bin/rm"
+# SSH forward
+alias ssh="ssh -X"
+
+plugins=(git extract z zsh-completions)
+autoload -U compinit -u && compinit -u
+
+
+# User configuration
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+ZSH_THEME="chao"
+source $ZSH/oh-my-zsh.sh
+
+# You may need to manually set your language environment
+ export LANG=en_US.UTF-8
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+sudo-command-line() {
+    [[ -z $BUFFER ]] && zle up-history
+    [[ $BUFFER != sudo\ * ]] && BUFFER="sudo $BUFFER"
+    zle end-of-line
+}
+zle -N sudo-command-line
+bindkey "\e\e" sudo-command-line
+source $LN_HOME/zshrc/incr.zsh
+
+function INFO(){
+    local msg="$1"
+    timeAndDate=`date +%Y-%m-%d:%H:%M:%S`
+    echo "[$timeAndDate] [INFO]  $msg"
+}
+function LOG(){
+    local msg="$1"
+    timeAndDate=`date +%Y-%m-%d:%H:%M:%S`
+    echo "[$timeAndDate] $msg"
+}
+function run(){
+    local cmd="$1"
+    $cmd
+}
+
+dt () {
+    NUM=${1:-5}
+    tail -$NUM /home/kunxu/mfs/ENV/TMUX.list
+}
+
+
