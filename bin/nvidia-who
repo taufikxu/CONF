@@ -1,0 +1,49 @@
+#!/bin/bash
+
+##########################################################################
+#
+# DESCRIPTION :
+#               Print information of processes using GPU.
+#
+# AUTHOR :      Chao Du, duchao0726@gmail.com
+#
+# START DATE :  Mar 31, 2016
+#
+# CHANGES :
+#               - Apr 14, fixed bug when no running processes found
+#               - Jun 6, minor changes
+#               - Aug 15, fixed bug
+#
+##########################################################################
+
+
+# get process id and GPU id
+PIDs="$(nvidia-smi pmon -c 1 | grep -v '-' | awk '{print $2}' | tail -n+3 | tr '\n' ' ')"
+GPUIDs="$(nvidia-smi pmon -c 1 | grep -v '-' | awk '{print $1}' | tail -n+3 | tr '\n' ' ')"
+SMIDs="$(nvidia-smi pmon -c 1 | grep -v '-' | awk '{print $4}' | tail -n+3 | tr '\n' ' ')"
+MEMIDs="$(nvidia-smi pmon -c 1 | grep -v '-' | awk '{print $5}' | tail -n+3 | tr '\n' ' ')"
+
+# check if there is any running processes
+if [[ -z $PIDs ]]; then
+    echo -e "mNo running process found."
+    exit
+fi
+
+IFS=', ' read -r -a arrPIDs <<< "$PIDs"
+IFS=', ' read -r -a arrGPUIDs <<< "$GPUIDs"
+IFS=', ' read -r -a arrSMIDs <<< "$SMIDs"
+IFS=', ' read -r -a arrMEMIDs <<< "$MEMIDs"
+
+# get process info and print
+COUNTER=0
+for pid in ${PIDs}; do
+    pss="$(ps -o 'uname,pid,start_time,etime,args' -p ${arrPIDs[$COUNTER]})"
+    if [ $COUNTER -eq 0 ]; then
+        psheader=$(sed -n 1p <<< "${pss}")
+        echo -e "GPU\tSM\tMEM\t${psheader}"
+    fi
+    psinfo=$(sed -n 2p <<< "${pss}")
+    width=$(tput cols)
+    echo -e "${arrGPUIDs[$COUNTER]}\t${arrSMIDs[$COUNTER]}\t${arrMEMIDs[$COUNTER]}\t${psinfo:0:$((width-30))}"
+    COUNTER=$((COUNTER + 1))
+done

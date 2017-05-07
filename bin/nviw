@@ -1,0 +1,44 @@
+#!/bin/bash
+
+##########################################################################
+#
+# DESCRIPTION :
+#               Print information of processes using GPU.
+#
+# AUTHOR :      Chao Du, duchao0726@gmail.com
+#
+# START DATE :  Mar 31, 2016
+#
+# CHANGES :
+#               - Apr 14, fixed bug when no running processes found
+#               - Jun 6, minor changes
+#               - Aug 15, fixed bug
+#
+##########################################################################
+
+
+# get process id and GPU id
+PIDs="$(nvidia-smi pmon -c 1 | grep -v '-' | awk '{print $2}' | tail -n+3 | tr '\n' ' ')"
+GPUIDs="$(nvidia-smi pmon -c 1 | grep -v '-' | awk '{print $1}' | tail -n+3 | tr '\n' ' ')"
+
+# check if there is any running processes
+if [[ -z $PIDs ]]; then
+    echo -e "\033[0;31mNo running process found.\033[0m"
+    exit
+fi
+
+IFS=', ' read -r -a arrPIDs <<< "$PIDs"
+IFS=', ' read -r -a arrGPUIDs <<< "$GPUIDs"
+
+# get process info and print
+COUNTER=0
+for pid in ${PIDs}; do
+    pss="$(ps -o 'uname,pid,start_time,etime,args' -p ${arrPIDs[$COUNTER]})"
+    if [ $COUNTER -eq 0 ]; then
+        psheader=$(sed -n 1p <<< "${pss}")
+        echo -e " GPU ${psheader}"
+    fi
+    psinfo=$(sed -n 2p <<< "${pss}")
+    echo -e " \033[0;32m${arrGPUIDs[$COUNTER]}\033[0m   ${psinfo:0:180}"
+    COUNTER=$((COUNTER + 1))
+done
