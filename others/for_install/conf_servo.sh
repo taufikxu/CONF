@@ -1,4 +1,4 @@
-LN_HOME=/home/kunxu/mfs/CONF
+LN_HOME=/home/kunxu/CONF
 
 rm ~/mfs
 rm -rf ~/.vim 

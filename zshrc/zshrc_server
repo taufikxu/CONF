@@ -1,7 +1,5 @@
-LN_HOME=/home/kunxu/mfs/CONF/
 export ZSH=$LN_HOME/zshrc/oh-my-zsh
 . $LN_HOME/zshrc/zshrc_app
-#source $LN_HOME/zshrc/incr.zsh
 
 export LC_ALL=C
 alias nvis='nvidia-smi'
@@ -40,7 +38,7 @@ source /mfs/jianfei/intel/parallel-2015/vtune_amplifier_xe_2015.2.0.393444/amplx
 export LD_LIBRARY_PATH=/mfs/jianfei/intel/parallel-2015/composer_xe_2015.2.164/compiler/lib/intel64:/mfs/jianfei/intel/parallel-2015/composer_xe_2015.2.164/mkl/lib/intel64:$LD_LIBRARY_PATH
 
 # for my bin
-export PATH=/home/kunxu/mfs/ENV/mbin:$PATH
+export PATH=$LN_HOME/bin:$PATH
 
 # theano
 export THEANORC=$HOME/mfs/CONF/others/theanorc
@@ -60,5 +58,3 @@ function usev5 () {
     export CPATH=/opt/cudnn/include:$TMPCPATH
 }
 usev5
-
-alias showall='ansible jungpu -a "nvidia-who"'
