@@ -9,6 +9,7 @@ rm ~/.tmux.conf
 ln -s $LN_HOME/zshrc/zshrc_local ~/.zshrc
 ln -s $LN_HOME/vim ~/.vim
 ln -s $LN_HOME/vim/vimrc ~/.vimrc
+cp $LN_HOME/zshrc/chao.zsh-theme $LN_HOME/zshrc/oh-my-zsh/themes/
 
 
 ln -s $LN_HOME/tmux/tmux.theme.conf ~/.tmux.theme.conf
