@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-LOCAL='/home/kunxu/ENV/'
-REMOT='/home/kunxu/ENV/'
+MPATH="/home/kunxu/"
 
-rsync -azv --delete jungpu$1:$REMOT $LOCAL
+rsync -azv --delete jungpu$1:$MPATH/ENV/ $MPATH/ENV/
+rsync -azv --delete jungpu$1:$MPATH/CONF/ $MPATH/CONF/
