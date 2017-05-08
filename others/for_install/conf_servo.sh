@@ -16,7 +16,7 @@ ln -s /mfs/kunxu/ ~/mfs
 ln -s $LN_HOME/vim ~/.vim
 ln -s $LN_HOME/vim/vimrc ~/.vimrc
 ln -s $LN_HOME/jupyter ~/.jupyter
-ln -s $LN_HOME/.ssh ~/.ssh
+ln -s /home/kunxu/mfs/ENV/.ssh ~/.ssh
 cp $LN_HOME/others/dircolors ~/.dircolors
 cp $LN_HOME/zshrc/zshrc_loader ~/.zshrc
 cp $LN_HOME/zshrc/chao.zsh-theme $LN_HOME/zshrc/oh-my-zsh/themes/
