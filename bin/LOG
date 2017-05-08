@@ -1,0 +1,6 @@
+#! /usr/bin/env bash
+
+msg="$1"
+timeAndDate=`date +%Y-%m-%d:%H:%M:%S`
+echo "[$timeAndDate] $msg"
+

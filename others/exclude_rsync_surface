@@ -1,0 +1,15 @@
+.svn
+.Trash-1000
+.git
+.idea
+ENV
+data
+Data
+DATA
+CONF
+ENV
+env
+VENV
+results
+*.npy
+
