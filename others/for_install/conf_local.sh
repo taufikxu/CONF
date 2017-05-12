@@ -1,4 +1,4 @@
-LN_HOME=/home/kunxu/Linux/Remote/CONF/
+LN_HOME=/home/kunxu/Documents/CONF/
 
 rm -rf ~/.vim 
 rm ~/.vimrc
