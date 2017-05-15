@@ -18,6 +18,7 @@ alias ntmux='bash $LN_HOME/others/tmux_new.sh'
 
 alias monmfs='sshfs jungpu5:/mfs/kunxu/ /home/kunxu/mfs/'
 alias monana='sshfs jungpu5:/home/kunxu/analysis /home/kunxu/analysis/'
+alias monall='sshfs jungpu6:/mfs /home/kunxu/Documents/mfs'
 
 # export PATH="/home/kunxu/anaconda2/bin:$PATH"
 export PYTHONPATH="/home/kunxu/Linux/caffe/python:$PYTHONPATH"
