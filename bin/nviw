@@ -39,6 +39,7 @@ for pid in ${PIDs}; do
         echo -e " GPU ${psheader}"
     fi
     psinfo=$(sed -n 2p <<< "${pss}")
-    echo -e " \033[0;32m${arrGPUIDs[$COUNTER]}\033[0m   ${psinfo:0:180}"
+    num=${1:-180}
+    echo -e " \033[0;32m${arrGPUIDs[$COUNTER]}\033[0m   ${psinfo:0:$num}"
     COUNTER=$((COUNTER + 1))
 done
