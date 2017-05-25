@@ -54,6 +54,7 @@ autoload -U compinit -u && compinit -u
 
 # User configuration
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+export DISABLE_AUTO_UPDATE=true
 ZSH_THEME="chao"
 source $ZSH/oh-my-zsh.sh
 
