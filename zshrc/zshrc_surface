@@ -1,5 +1,6 @@
 export LN_HOME=/mnt/d/CONF/
 ZSH_HOME=$LN_HOME/zshrc/
+export ZSH_CUSTOM=$LN_HOME/zshrc/
 export ZSH=~/.oh-my-zsh
 . $ZSH_HOME/zshrc_app
 

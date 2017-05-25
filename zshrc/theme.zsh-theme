@@ -3,7 +3,7 @@
 
 ### Git [±master ▾●]
 
-ZSH_THEME_GIT_PROMPT_PREFIX="[%{$fg_bold[green]%}±%{$reset_color%}%{$fg_bold[white]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="git:[%{$fg_bold[green]%}±%{$reset_color%}%{$fg_bold[white]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}]"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}✓%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[cyan]%}▴%{$reset_color%}"
@@ -74,15 +74,19 @@ host_or_exitcode_prompt () {
     echo $_HOST_EXITCODE
 }
 
+get_pwd () {
+    echo "${PWD/$HOME/~}"
+}
+
 if [[ $EUID -eq 0 ]]; then
   _USERNAME="%{$fg[red]%}%n%{$reset_color%}"
   _LIBERTY="%{$fg[red]%}#%{$reset_color%}"
 else
-  _USERNAME="%{$fg[blue]%}%n%{$reset_color%}"
+  _USERNAME="%{$fg[cyan]%}%n%{$reset_color%}"
   _LIBERTY="%{$fg[green]%}$%{$reset_color%}"
 fi
 
-_PWD="%{$fg[blue]%}%~%{$reset_color%}"
+_PWD="%{$fg[yellow]%}%~%{$reset_color%}"
 _TIME="%{$fg[green]%}%*%{$reset_color%}"
 
 setopt prompt_subst
