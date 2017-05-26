@@ -3,7 +3,7 @@
 
 ### Git [±master ▾●]
 
-ZSH_THEME_GIT_PROMPT_PREFIX="git:[%{$fg_bold[green]%}±%{$reset_color%}%{$fg_bold[white]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="$fg[red]git:%{$reset_color%}[%{$fg_bold[green]%}±%{$reset_color%}%{$fg_bold[white]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}]"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}✓%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[cyan]%}▴%{$reset_color%}"
@@ -63,13 +63,13 @@ bureau_git_prompt () {
   echo $_result
 }
 
-_HOST_EXITCODE="@${HOST}"
+_HOST_EXITCODE="$fg[cyan]@${HOST}%{$reset_color%}"
 
 host_or_exitcode_prompt () {
     if [[ $? -eq 0 ]]; then
-        _HOST_EXITCODE="@${HOST}"
+        _HOST_EXITCODE="$fg[cyan]@${HOST}%{$reset_color%}"
     else
-        _HOST_EXITCODE="@${HOST} %{$fg[red]%}[%? <==]%{$reset_color%}"
+        _HOST_EXITCODE="$fg[cyan]@${HOST}%{$reset_color%}%{$fg[red]%}[%? <==]%{$reset_color%}"
     fi
     echo $_HOST_EXITCODE
 }
