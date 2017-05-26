@@ -63,13 +63,13 @@ bureau_git_prompt () {
   echo $_result
 }
 
-_HOST_EXITCODE="$fg[cyan]@${HOST}%{$reset_color%}"
+_HOST_EXITCODE="$fg[blue]@${HOST}%{$reset_color%}"
 
 host_or_exitcode_prompt () {
     if [[ $? -eq 0 ]]; then
-        _HOST_EXITCODE="$fg[cyan]@${HOST}%{$reset_color%}"
+        _HOST_EXITCODE="$fg[blue]@${HOST}%{$reset_color%}"
     else
-        _HOST_EXITCODE="$fg[cyan]@${HOST}%{$reset_color%}%{$fg[red]%}[%? <==]%{$reset_color%}"
+        _HOST_EXITCODE="$fg[blue]@${HOST}%{$reset_color%}%{$fg[red]%}[%? <==]%{$reset_color%}"
     fi
     echo $_HOST_EXITCODE
 }
