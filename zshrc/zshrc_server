@@ -54,4 +54,7 @@ function usev5 () {
     export LIBRARY_PATH=/opt/cudnn/lib64:$TMPLIBRARY_PATH
     export CPATH=/opt/cudnn/include:$TMPCPATH
 }
+function gpus() {
+    export CUDA_VISIBLE_DEVICES=$1
+}
 usev5
