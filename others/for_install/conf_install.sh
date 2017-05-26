@@ -1,7 +1,6 @@
-LN_HOME=/home/kunxu/CONF
+LN_HOME=/home/kunxu/Documents/CONF
 instance=local
 
-rm ~/mfs
 rm -rf ~/.vim 
 rm ~/.vimrc
 rm ~/.zshrc
@@ -12,7 +11,6 @@ rm -rf ~/.oh-my-zsh
 # rm -rf ~/.ssh
 
 
-ln -s /mfs/kunxu/ ~/mfs
 ln -s $LN_HOME/vim ~/.vim
 ln -s $LN_HOME/vim/vimrc ~/.vimrc
 # git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim

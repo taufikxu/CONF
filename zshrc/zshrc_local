@@ -15,17 +15,15 @@ alias monana='sshfs jungpu5:/home/kunxu/analysis /home/kunxu/analysis/'
 alias monall='sshfs jungpu6:/mfs /home/kunxu/Documents/mfs'
 
 # export PATH="/home/kunxu/anaconda2/bin:$PATH"
-export PYTHONPATH="/home/kunxu/Linux/caffe/python:$PYTHONPATH"
+export PYTHONPATH=/home/kunxu/Linux/caffe/python:$PYTHONPATH
 
 # added for matlab
-export PATH="/usr/local/MATLAB/R2015b/bin:$PATH"
-export PATH="/home/kunxu/Linux/caffe/build/tools/:$PATH"
-export PATH="/home/kunxu/Documents/vpn/:$PATH"
+#export PATH=/usr/local/MATLAB/R2015b/bin:$PATH
+#export PATH=/home/kunxu/Linux/caffe/build/tools/:$PATH
+#export PATH=/home/kunxu/Documents/vpn/:$PATH
+#export MATLABPATH=/home/kunxu/Documents/npy-matlab/
 
 # added for texlive
-export PATH=/home/kunxu/Documents/texlive/bin/x86_64-linux:$PATH; 
-export MANPATH=/home/kunxu/Documents/texlive/texmf-dist/doc/man:$MANPATH; 
-export INFOPATH=/home/kunxu/Documents/texlive/texmf-dist/doc/info:$INFOPATH; 
-
-
-export MATLABPATH=/home/kunxu/Documents/npy-matlab/
+export PATH=/home/kunxu/Documents/texlive/bin/x86_64-linux:$PATH
+export MANPATH=/home/kunxu/Documents/texlive/texmf-dist/doc/man:$MANPATH
+export INFOPATH=/home/kunxu/Documents/texlive/texmf-dist/doc/info:$INFOPATH
