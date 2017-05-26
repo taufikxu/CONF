@@ -1,5 +1,4 @@
-LN_HOME=/home/kunxu/Documents/CONF
-instance=local
+LN_HOME=/home/kunxu/CONF
 
 rm -rf ~/.vim 
 rm ~/.vimrc
