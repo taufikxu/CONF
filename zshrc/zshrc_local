@@ -1,10 +1,3 @@
-export LN_HOME=/home/kunxu/Documents/CONF
-ZSH_HOME=$LN_HOME/zshrc
-export ZSH=$ZSH_HOME/oh-my-zsh
-export ZSH_CUSTOM=$LN_HOME/zshrc/
-source $ZSH_HOME/zshrc_app
-
-
 #for sync
 EXCLUDE=$LN_HOME/others/exclude_rsync
 REMOT='jungpu6:/home/kunxu/mfs'
