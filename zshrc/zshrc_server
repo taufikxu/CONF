@@ -38,7 +38,7 @@ export LD_LIBRARY_PATH=/mfs/jianfei/intel/parallel-2015/composer_xe_2015.2.164/c
 export PATH=$LN_HOME/bin:$PATH
 
 # theano
-export THEANORC=$HOME/mfs/CONF/others/theanorc
+export THEANORC=$LN_HOME/others/theanorc
 alias gpu0='export CUDA_VISIBLE_DEVICES=0'
 alias gpu1='export CUDA_VISIBLE_DEVICES=1'
 alias gpu2='export CUDA_VISIBLE_DEVICES=2'
