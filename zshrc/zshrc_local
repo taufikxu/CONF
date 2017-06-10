@@ -1,7 +1,7 @@
 #for sync
 EXCLUDE=$LN_HOME/others/exclude_rsync
-REMOT='jungpu6:/home/kunxu/mfs'
-LOCAL=/home/kunxu/Linux/Remote
+REMOT='juncluster4:/home/kunxu/mfs'
+LOCAL=$HOME/Linux/Remote
 alias syupd='rsync -avz --exclude-from=$EXCLUDE --delete $LOCAL/ $REMOT/'
 alias syup='rsync -avz --exclude-from=$EXCLUDE $LOCAL/ $REMOT/'
 alias sydod='rsync -avz --exclude-from=$EXCLUDE --delete $REMOT/ $LOCAL/'
@@ -11,11 +11,11 @@ alias env='source $HOME/Linux/ENV/bin/activate'
 alias ntmux='bash $LN_HOME/others/tmux_new.sh'
 
 alias monmfs='sshfs jungpu5:/mfs/kunxu/ /home/kunxu/mfs/'
-alias monana='sshfs jungpu5:/home/kunxu/analysis /home/kunxu/analysis/'
+alias monana='sshfs jungpu5:/analysis /home/kunxu/analysis/'
 alias monall='sshfs jungpu6:/mfs /home/kunxu/Documents/mfs'
 
 # export PATH="/home/kunxu/anaconda2/bin:$PATH"
-export PYTHONPATH=/home/kunxu/Linux/caffe/python:$PYTHONPATH
+export PYTHONPATH=$HOME/Linux/caffe/python:$PYTHONPATH
 
 # added for matlab
 #export PATH=/usr/local/MATLAB/R2015b/bin:$PATH
@@ -24,6 +24,6 @@ export PYTHONPATH=/home/kunxu/Linux/caffe/python:$PYTHONPATH
 #export MATLABPATH=/home/kunxu/Documents/npy-matlab/
 
 # added for texlive
-export PATH=/home/kunxu/Documents/texlive/bin/x86_64-linux:$PATH
-export MANPATH=/home/kunxu/Documents/texlive/texmf-dist/doc/man:$MANPATH
-export INFOPATH=/home/kunxu/Documents/texlive/texmf-dist/doc/info:$INFOPATH
+export PATH=$HOME/Documents/texlive/bin/x86_64-linux:$PATH
+export MANPATH=$HOME/Documents/texlive/texmf-dist/doc/man:$MANPATH
+export INFOPATH=$HOME/Documents/texlive/texmf-dist/doc/info:$INFOPATH
