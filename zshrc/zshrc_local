@@ -10,9 +10,9 @@ alias sydo='rsync -avz --exclude-from=$EXCLUDE $REMOT/ $LOCAL/'
 alias env='source $HOME/Linux/ENV/bin/activate'
 alias ntmux='bash $LN_HOME/others/tmux_new.sh'
 
-alias monmfs='sshfs jungpu5:/mfs/kunxu/ /home/kunxu/mfs/'
+alias monmfs='sshfs juncluster4:/mfs/kunxu/ /home/kunxu/mfs/'
 alias monana='sshfs jungpu5:/analysis /home/kunxu/analysis/'
-alias monall='sshfs jungpu6:/mfs /home/kunxu/Documents/mfs'
+alias monall='sshfs juncluster4:/mfs /home/kunxu/Documents/mfs'
 
 # export PATH="/home/kunxu/anaconda2/bin:$PATH"
 export PYTHONPATH=$HOME/Linux/caffe/python:$PYTHONPATH
