@@ -1,4 +1,4 @@
-LN_HOME=/home/kunxu/CONF
+LN_HOME=/home/taufikxu/CONF
 
 rm -rf ~/.vim 
 rm ~/.vimrc

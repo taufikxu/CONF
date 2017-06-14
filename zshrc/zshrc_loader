@@ -1,6 +1,6 @@
 # include shared zshrc if it exists
 
-export LN_HOME=/home/kunxu/CONF/
+export LN_HOME=$HOME/CONF/
 instance='zshrc_server'
 
 if [ -f "$LN_HOME/zshrc/$instance" ]; then
