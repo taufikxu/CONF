@@ -14,7 +14,7 @@ root = /usr/local/cuda
 [dnn.conv]
 algo_fwd_filter = guess_once
 algo_fwd_data = guess_once
-algo_bwd_filter = guess_once
+algo_bwd_filter = none
 algo_bwd_data = guess_once
 
 [nvcc]
