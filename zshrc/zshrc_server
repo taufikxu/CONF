@@ -1,8 +1,8 @@
 export LC_ALL=C
 alias nvis='nvidia-smi'
 
-alias env='source /home/kunxu/ENV/bin/activate'
-alias menv='source /home/kunxu/mfs/ENV/ENV/bin/activate'
+alias env='source $HOME/ENV/bin/activate'
+alias menv='source $HOME/mfs/ENV/ENV/bin/activate'
 
 alias ntmux='$LN_HOME/others/tmux_new.sh'
 alias rm='trash'

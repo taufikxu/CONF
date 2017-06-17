@@ -91,7 +91,7 @@ function run(){
 
 dt () {
     NUM=${1:-5}
-    tail -$NUM /home/kunxu/mfs/ENV/TMUX.list
+    tail -$NUM $HOME/mfs/ENV/TMUX.list
 }
 
 
