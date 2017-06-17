@@ -11,7 +11,7 @@ call vundle#begin()
 
 " 'let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
+Plugin 'airblade/vim-gitgutter'
 Plugin 'chriskempson/base16-vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'Yggdroot/indentLine'
@@ -128,6 +128,9 @@ set t_vb=
 set tm=500
 
 set number
+set relativenumber
+autocmd InsertEnter * :set norelativenumber number
+autocmd InsertLeave * :set relativenumber
 " set relativenumber " show relative line numbers
 set cursorline
 
