@@ -58,3 +58,4 @@ function gpus() {
     export CUDA_VISIBLE_DEVICES=$1
 }
 usev5
+gpu0
