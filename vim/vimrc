@@ -151,7 +151,7 @@ autocmd InsertEnter * :set norelativenumber number
 autocmd InsertLeave * :set relativenumber
 " set relativenumber " show relative line numbers
 set cursorline
-set cursorcolumn
+" set cursorcolumn
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Status line
@@ -246,8 +246,8 @@ nmap \t :set ts=4 sts=4 sw=4 noet<cr>
 nmap \s :set ts=4 sts=4 sw=4 et<cr>
 
 " switching tabs
-map <F7> :bprevious<cr>
-map <F8> :bnext<cr>
+map <F7> :tabprevious<cr>
+map <F8> :tabnext<cr>
 
 " moving between windows
 map <C-j> <C-W>j
@@ -427,6 +427,8 @@ let g:ctrlp_working_path_mode = 2
 let g:airline_theme='papercolor'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#tab_nr_type = 1
+let g:airline#extensions#tabline#switch_buffers_and_tabs = 1
 
 " Indent Guides
 " let g:indent_guides_enable_on_vim_startup = 1
