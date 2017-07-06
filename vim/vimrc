@@ -1,3 +1,12 @@
+"  ▄█    █▄   ▄█    ▄▄▄▄███▄▄▄▄
+" ███    ███ ███  ▄██▀▀▀███▀▀▀██▄
+" ███    ███ ███▌ ███   ███   ███
+" ███    ███ ███▌ ███   ███   ███
+" ███    ███ ███▌ ███   ███   ███
+" ███    ███ ███  ███   ███   ███
+" ███    ███ ███  ███   ███   ███
+"  ▀██████▀  █▀    ▀█   ███   █▀
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -10,6 +19,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " 'let Vundle manage Vundle, required
+Plugin 'sonph/onehalf', {'rtp': 'vim/'}
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'chriskempson/base16-vim'
@@ -156,7 +166,7 @@ highlight Comment cterm=bold
 set background=dark
 
 syntax enable " syntax enable keeps your color settings, syntax on overrides them
-colorscheme Tomorrow-Night-Eighties
+colorscheme onehalfdark
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac

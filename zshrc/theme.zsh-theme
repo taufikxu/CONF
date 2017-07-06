@@ -92,6 +92,6 @@ _TIME="%{$fg[green]%}%*%{$reset_color%}"
 setopt prompt_subst
 
 # Left Prompt
-PROMPT='${_USERNAME}$(host_or_exitcode_prompt) ${_TIME} ${_PWD} $(bureau_git_prompt)
-${_LIBERTY} '
+PROMPT='╭─${_USERNAME}$(host_or_exitcode_prompt) ${_TIME} ${_PWD} $(bureau_git_prompt)
+╰─${_LIBERTY} '
 
