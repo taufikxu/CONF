@@ -19,11 +19,19 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " 'let Vundle manage Vundle, required
-Plugin 'sonph/onehalf', {'rtp': 'vim/'}
 Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'scrooloose/nerdtree'
+Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'scrooloose/syntastic'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'chriskempson/base16-vim'
-Plugin 'flazz/vim-colorschemes'
+
+" Plugin 'flazz/vim-colorschemes'
+Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'sonph/onehalf', {'rtp': 'vim/'}
+
 Plugin 'Yggdroot/indentLine'
 let g:indentLine_char='|'
 let g:indentLine_color_term = 239
@@ -143,6 +151,7 @@ autocmd InsertEnter * :set norelativenumber number
 autocmd InsertLeave * :set relativenumber
 " set relativenumber " show relative line numbers
 set cursorline
+set cursorcolumn
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Status line
@@ -157,16 +166,19 @@ set laststatus=2
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting and set background
-let &termencoding=&encoding
-set encoding=utf8
+syntax enable " syntax enable keeps your color settings, syntax on overrides them
+
+set encoding=utf-8
 set fileencodings=utf-8,gbk
+let &termencoding=&encoding
 let base16colorspace=256
-set t_Co=256
 highlight Comment cterm=bold
 set background=dark
+set t_Co=256
 
-syntax enable " syntax enable keeps your color settings, syntax on overrides them
-colorscheme onehalfdark
+" hi Normal ctermbg=NONE
+colorscheme PaperColor
+
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
@@ -234,8 +246,8 @@ nmap \t :set ts=4 sts=4 sw=4 noet<cr>
 nmap \s :set ts=4 sts=4 sw=4 et<cr>
 
 " switching tabs
-map <F7> :tabp<cr>
-map <F8> :tabn<cr>
+map <F7> :bprevious<cr>
+map <F8> :bnext<cr>
 
 " moving between windows
 map <C-j> <C-W>j
@@ -392,9 +404,10 @@ let g:NERDTreeQuitOnOpen=1
 " show hidden files in NERDTree
 let NERDTreeShowHidden=1
 " Toggle NERDTree
-nmap <silent> <leader>k :NERDTreeToggle<cr>
+" nmap <silent> <leader>k :NERDTreeToggle<cr>
+nmap <silent> <C-L> :NERDTreeToggle<CR>
 " expand to the path of the file in the current buffer
-nmap <silent> <leader>y :NERDTreeFind<cr>
+nmap <silent> <leader>l :NERDTreeFind<cr>
 
 " map fuzzyfinder (CtrlP) plugin
 " nmap <silent> <leader>t :CtrlP<cr>
@@ -411,7 +424,9 @@ let g:ctrlp_custom_ignore = {
 " search the nearest ancestor that contains .git, .hg, .svn
 let g:ctrlp_working_path_mode = 2
 
-let g:airline_theme='bubblegum'
+let g:airline_theme='papercolor'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 
 " Indent Guides
 " let g:indent_guides_enable_on_vim_startup = 1
