@@ -67,9 +67,9 @@ _HOST_EXITCODE="$fg[blue]@${HOST}%{$reset_color%}"
 
 host_or_exitcode_prompt () {
     if [[ $? -eq 0 ]]; then
-        _HOST_EXITCODE="$fg[blue]@${HOST}%{$reset_color%}"
+        _HOST_EXITCODE="$fg[yellow]@${HOST}%{$reset_color%}"
     else
-        _HOST_EXITCODE="$fg[blue]@${HOST}%{$reset_color%}%{$fg[red]%}[%? <==]%{$reset_color%}"
+        _HOST_EXITCODE="$fg[red]@${HOST}%{$reset_color%}%{$fg[red]%}[%? <==]%{$reset_color%}"
     fi
     echo $_HOST_EXITCODE
 }
@@ -79,19 +79,21 @@ get_pwd () {
 }
 
 if [[ $EUID -eq 0 ]]; then
-  _USERNAME="%{$fg[red]%}%n%{$reset_color%}"
-  _LIBERTY="%{$fg[red]%}#%{$reset_color%}"
+  _USERNAME="%{$terminfo[bold]$fg[red]%}%n%{$reset_color%}"
+  _LIBERTY="%{$terminfo[bold]$fg[red]%}#%{$reset_color%}"
 else
-  _USERNAME="%{$fg[cyan]%}%n%{$reset_color%}"
-  _LIBERTY="%{$fg[green]%}$%{$reset_color%}"
+  _USERNAME="%{$terminfo[bold]$fg[green]%}%n%{$reset_color%}"
+  _LIBERTY="%{$terminfo[bold]$fg[green]%}$%{$reset_color%}"
 fi
 
-_PWD="%{$fg[yellow]%}%~%{$reset_color%}"
+_PWD="%{$terminfo[bold]$fg[yellow]%}%~%{$reset_color%}"
 _TIME="%{$fg[green]%}%*%{$reset_color%}"
+_UPPER="$fg[cyan]%{$reset_color%}"
+_DOWN="$fg[cyan]%{$reset_color%}"
 
 setopt prompt_subst
 
 # Left Prompt
-PROMPT='╭─${_USERNAME}$(host_or_exitcode_prompt) ${_TIME} ${_PWD} $(bureau_git_prompt)
-╰─${_LIBERTY} '
+PROMPT='╭${_USERNAME}$(host_or_exitcode_prompt) ${_TIME} ${_PWD} $(bureau_git_prompt)
+╰${_LIBERTY} '
 
