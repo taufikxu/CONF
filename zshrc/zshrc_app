@@ -94,4 +94,8 @@ dt () {
     tail -$NUM $HOME/mfs/ENV/TMUX.list
 }
 
-
+= () {
+    #calc="${@//p/+}"
+    #calc="${calc//x/*}"
+    bc -l <<<"scale=10;$@"
+}
