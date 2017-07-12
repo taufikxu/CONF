@@ -1,5 +1,5 @@
 # Assuming lm-sensors is installed and configured
-. /etc/zsh_command_not_found
+# . /etc/zsh_command_not_found
 
 # If not running interactively, don't do anything
 case $- in
