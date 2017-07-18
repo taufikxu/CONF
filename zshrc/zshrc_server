@@ -43,6 +43,11 @@ alias gpu0='export CUDA_VISIBLE_DEVICES=0'
 alias gpu1='export CUDA_VISIBLE_DEVICES=1'
 alias gpu2='export CUDA_VISIBLE_DEVICES=2'
 alias gpu3='export CUDA_VISIBLE_DEVICES=3'
+alias gpu5='export CUDA_VISIBLE_DEVICES=5'
+alias gpu6='export CUDA_VISIBLE_DEVICES=6'
+alias gpu7='export CUDA_VISIBLE_DEVICES=7'
+alias gpu8='export CUDA_VISIBLE_DEVICES=8'
+
 
 function usev4 () {
     export LD_LIBRARY_PATH=/opt/cudnn-v4/lib64:$TMPLD_LIBRARY_PATH
