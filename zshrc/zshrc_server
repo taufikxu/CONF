@@ -7,7 +7,7 @@ alias menv='source $HOME/mfs/ENV/ENV/bin/activate'
 alias ntmux='$LN_HOME/others/tmux_new.sh'
 alias rm='trash'
 
-alias go='cd /home/kunxu/mfs/workspace/'
+alias go='cd /mfs/kunxu/'
 
 
 # Add for Cuda
