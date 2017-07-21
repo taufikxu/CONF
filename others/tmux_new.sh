@@ -9,7 +9,7 @@ else
 fi
 
 
-FILE=/home/kunxu/mfs/ENV/TMUX.list
+FILE=/mfs/kunxu/ENV/TMUX.list
 LOG $(hostname -s):$session >> $FILE
 lines=$(wc -l < $FILE)
 if [ "$lines" -gt 1000 ]; then
