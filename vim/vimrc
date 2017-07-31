@@ -32,9 +32,9 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'sonph/onehalf', {'rtp': 'vim/'}
 
-Plugin 'Yggdroot/indentLine'
-let g:indentLine_char='|'
-let g:indentLine_color_term = 239
+" Plugin 'Yggdroot/indentLine'
+" let g:indentLine_char='|'
+" let g:indentLine_color_term = 239
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
