@@ -26,3 +26,21 @@ export PYTHONPATH=$HOME/Linux/caffe/python:$PYTHONPATH
 export PATH=$HOME/Documents/texlive/bin/x86_64-linux:$PATH
 export MANPATH=$HOME/Documents/texlive/texmf-dist/doc/man:$MANPATH
 export INFOPATH=$HOME/Documents/texlive/texmf-dist/doc/info:$INFOPATH
+
+# Add for Cuda
+export PATH=/usr/local/cuda/bin:$PATH
+export CUDA_ROOT=/usr/local/cuda
+export CUDA_HOME=/usr/local/cuda
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/opt/OpenBLAS/lib:$LD_LIBRARY_PATH
+export PYTHONPATH=/opt/OpenBLAS/lib:$PYTHONPATH
+export PYTHONPATH=/usr/local/cuda/lib64:$PYTHONPATH
+export CPATH=/opt/OpenBLAS:$CPATH
+
+export TMPLD_LIBRARY_PATH=$LD_LIBRARY_PATH
+export TMPLIBRARY_PATH=$LIBRARY_PATH
+export TMPCPATH=$CPATH
+
+export LD_LIBRARY_PATH=/opt/cudnn/lib64:$TMPLD_LIBRARY_PATH
+export LIBRARY_PATH=/opt/cudnn/lib64:$TMPLIBRARY_PATH
+export CPATH=/opt/cudnn/include:$TMPCPATH
