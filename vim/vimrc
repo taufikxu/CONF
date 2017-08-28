@@ -192,6 +192,8 @@ set ffs=unix,dos,mac
 "set noswapfile
 "set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 "set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set backupdir=~/.vim/tmpfiles//
+set directory=~/.vim/tmpfiles//
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Mappings: Fixing key in Tmux
