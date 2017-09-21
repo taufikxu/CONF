@@ -20,10 +20,6 @@ export PYTHONPATH=/opt/OpenBLAS/lib:$PYTHONPATH
 export PYTHONPATH=/usr/local/cuda/lib64:$PYTHONPATH
 export CPATH=/opt/OpenBLAS:$CPATH
 
-export TMPLD_LIBRARY_PATH=$LD_LIBRARY_PATH
-export TMPLIBRARY_PATH=$LIBRARY_PATH
-export TMPCPATH=$CPATH
-
 # add for caffe
 # export PATH=/home/kunxu/mfs/caffe/build/tools/:$PATH
 # export PYTHONPATH=/home/kunxu/mfs/caffe/python:$PYTHONPATH
@@ -49,6 +45,9 @@ alias gpu6='export CUDA_VISIBLE_DEVICES=6'
 alias gpu7='export CUDA_VISIBLE_DEVICES=7'
 alias gpu8='export CUDA_VISIBLE_DEVICES=8'
 
+export TMPLD_LIBRARY_PATH=$LD_LIBRARY_PATH
+export TMPLIBRARY_PATH=$LIBRARY_PATH
+export TMPCPATH=$CPATH
 
 function usev4 () {
     export LD_LIBRARY_PATH=/opt/cudnn-v4/lib64:$TMPLD_LIBRARY_PATH
