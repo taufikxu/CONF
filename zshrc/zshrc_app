@@ -18,8 +18,8 @@ HISTFILESIZE=2000
 
 # enable color for gnome-terminal
 if [ -x $HOME/.dircolors ]; then
-    test -r $HOME/.dircolors && eval "$(dircolors -b $HOME/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    # test -r $HOME/.dircolors && eval "$(dircolors -b $HOME/.dircolors)" || eval "$(dircolors -b)"
+    # alias ls='ls --color=auto'
     alias dir='dir --color=auto'
     alias vdir='vdir --color=auto'
  

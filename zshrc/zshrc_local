@@ -1,13 +1,13 @@
 #for sync
 EXCLUDE=$LN_HOME/others/exclude_rsync
 REMOT='juncluster4:/mfs/kunxu'
-LOCAL=$HOME/Linux/Remote
+LOCAL=$HOME/Work/Remote
 alias syupd='rsync -avz --exclude-from=$EXCLUDE --delete $LOCAL/ $REMOT/'
 alias syup='rsync -avz --exclude-from=$EXCLUDE $LOCAL/ $REMOT/'
 alias sydod='rsync -avz --exclude-from=$EXCLUDE --delete $REMOT/ $LOCAL/'
 alias sydo='rsync -avz --exclude-from=$EXCLUDE $REMOT/ $LOCAL/'
 
-alias env='source $HOME/Linux/ENV/bin/activate'
+alias env='source $HOME/Work/ENV/bin/activate'
 alias ntmux='bash $LN_HOME/others/tmux_new.sh'
 
 alias ansible='ssh juncluster3 "ansible jungpu -a \"nvidia-who\""'
@@ -16,11 +16,11 @@ alias monmfs='sshfs juncluster4:/mfs/kunxu/ $HOME/mfs/'
 alias monana='sshfs jungpu9:/home/kunxu/analysis $HOME/Results/Analysis'
 alias monall='sshfs juncluster4:/mfs $HOME/Results/mfs'
 
-export PYTHONPATH=$HOME/Linux/caffe/python:$PYTHONPATH
+export PYTHONPATH=$HOME/Work/caffe/python:$PYTHONPATH
 
 # added for matlab
 #export PATH=/usr/local/MATLAB/R2015b/bin:$PATH
-#export PATH=/home/kunxu/Linux/caffe/build/tools/:$PATH
+#export PATH=/home/kunxu/Work/caffe/build/tools/:$PATH
 #export PATH=/home/kunxu/Documents/vpn/:$PATH
 #export MATLABPATH=/home/kunxu/Documents/npy-matlab/
 
