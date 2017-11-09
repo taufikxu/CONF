@@ -55,12 +55,22 @@ function usev4 () {
     export CPATH=/opt/cudnn-v4/include:$TMPCPATH
 }
 function usev5 () {
-    export LD_LIBRARY_PATH=/opt/cudnn/lib64:$TMPLD_LIBRARY_PATH
-    export LIBRARY_PATH=/opt/cudnn/lib64:$TMPLIBRARY_PATH
-    export CPATH=/opt/cudnn/include:$TMPCPATH
+    export LD_LIBRARY_PATH=/opt/cudnn-v5/lib64:$TMPLD_LIBRARY_PATH
+    export LIBRARY_PATH=/opt/cudnn-v5/lib64:$TMPLIBRARY_PATH
+    export CPATH=/opt/cudnn-v5/include:$TMPCPATH
+}
+function usev6 () {
+    export LD_LIBRARY_PATH=/opt/cudnn-v6/lib64:$TMPLD_LIBRARY_PATH
+    export LIBRARY_PATH=/opt/cudnn-v6/lib64:$TMPLIBRARY_PATH
+    export CPATH=/opt/cudnn-v6/include:$TMPCPATH
+}
+function usev7 () {
+    export LD_LIBRARY_PATH=/opt/cudnn-v7/lib64:$TMPLD_LIBRARY_PATH
+    export LIBRARY_PATH=/opt/cudnn-v7/lib64:$TMPLIBRARY_PATH
+    export CPATH=/opt/cudnn-v5/include:$TMPCPATH
 }
 function gpus() {
     export CUDA_VISIBLE_DEVICES=$1
 }
-usev5
+usev6
 gpu0
