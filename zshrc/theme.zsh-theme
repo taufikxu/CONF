@@ -50,10 +50,16 @@ bureau_git_status () {
 }
 
 bureau_git_prompt () {
+  # if [[ $COUNTER_GIT -ne 10 ]]; then
+  #   COUNTER_GIT=$(($COUNTER_GIT+1))
+  #   echo $COUNTER_GIT
+  #   return 0
+  # fi
+  # COUNTER_GIT=0
   local _branch=$(bureau_git_branch)
-  local _status=$(bureau_git_status)
   local _result=""
   if [[ "${_branch}x" != "x" ]]; then
+    local _status=$(bureau_git_status)
     _result="$ZSH_THEME_GIT_PROMPT_PREFIX$_branch"
     if [[ "${_status}x" != "x" ]]; then
       _result="$_result $_status"
@@ -94,6 +100,9 @@ _DOWN="$fg[cyan]%{$reset_color%}"
 setopt prompt_subst
 
 # Left Prompt
-PROMPT='${_USERNAME}$(host_or_exitcode_prompt) ${_PWD} $(bureau_git_prompt)
+#PROMPT='${_USERNAME}$(host_or_exitcode_prompt) ${_PWD} $(bureau_git_prompt)
+#${_TIME} ${_LIBERTY} '
+
+PROMPT='${_USERNAME}$(host_or_exitcode_prompt) ${_PWD}
 ${_TIME} ${_LIBERTY} '
 

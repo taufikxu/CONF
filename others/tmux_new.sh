@@ -19,10 +19,10 @@ fi
 $cmd has -t $session 2> /dev/null
 
 if [ $? -ne 0 ]; then
-    $rcmd new -d -n nviw -s $session "watch nvidia-who"
-    $rcmd split-window -h -t $session:0 "watch nvidia-smi"
+    $rcmd new -d -n nviw -s $session "watch nvidia-smi"
+    $rcmd split-window -h -t $session:0 "watch nvidia-who"
     #$rcmd split-window -v -t $session:0.0 "watch nvidia-who"
-    $rcmd resize-pane -t $session:0.1 -x 110
+    $rcmd resize-pane -t $session:0.0 -x 15
     $rcmd neww -n zsh -t $session "zsh"
 fi
 

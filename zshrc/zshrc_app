@@ -48,7 +48,7 @@ alias sudorm="/bin/rm"
 # SSH forward
 alias ssh="ssh -X"
 
-plugins=(git extract z zsh-completions)
+plugins=(git extract)
 autoload -U compinit -u && compinit -u
 
 
