@@ -22,7 +22,7 @@ if [ $? -ne 0 ]; then
     $rcmd new -d -n nviw -s $session "watch nvidia-smi"
     $rcmd split-window -h -t $session:0 "watch nvidia-who"
     #$rcmd split-window -v -t $session:0.0 "watch nvidia-who"
-    $rcmd resize-pane -t $session:0.0 -x 15
+    $rcmd resize-pane -t $session:0.0 -x 85
     $rcmd neww -n zsh -t $session "zsh"
 fi
 
