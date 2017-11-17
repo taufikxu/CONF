@@ -5,7 +5,7 @@ cmd=$(which tmux)
 if [ "$1" != "" ]; then
     session=$1
 else
-    session=$(hostname -s) # session name
+    session=$(basename "$PWD")
 fi
 
 
