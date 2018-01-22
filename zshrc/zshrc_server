@@ -1,14 +1,7 @@
 export LC_ALL=C
-alias nvis='nvidia-smi'
 
 alias env='source $HOME/ENV/bin/activate'
 alias menv='source $HOME/mfs/ENV/ENV/bin/activate'
-
-alias ntmux='$LN_HOME/others/tmux_new.sh'
-alias rm='trash'
-
-alias go='cd /mfs/kunxu/'
-
 
 # Add for Cuda
 export PATH=/usr/local/cuda/bin:$PATH
@@ -30,8 +23,6 @@ source /mfs/jianfei/intel/parallel-2015/mkl/bin/mklvars.sh intel64
 source /mfs/jianfei/intel/parallel-2015/vtune_amplifier_xe_2015.2.0.393444/amplxe-vars.sh
 export LD_LIBRARY_PATH=/mfs/jianfei/intel/parallel-2015/composer_xe_2015.2.164/compiler/lib/intel64:/mfs/jianfei/intel/parallel-2015/composer_xe_2015.2.164/mkl/lib/intel64:$LD_LIBRARY_PATH
 
-# for my bin
-export PATH=$LN_HOME/bin:$PATH
 
 # theano
 export THEANORC=$LN_HOME/others/theanorc
