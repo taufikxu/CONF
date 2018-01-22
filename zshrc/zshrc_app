@@ -56,6 +56,8 @@ plugins=(git extract)
 autoload -U compinit -u && compinit -u
 
 
+# for my bin
+export PATH=$LN_HOME/bin:$PATH
 # User configuration
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export DISABLE_AUTO_UPDATE=true
