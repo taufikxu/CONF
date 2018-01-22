@@ -42,11 +42,15 @@ alias tmux="tmux -2 -u"
 alias tat="tmux attach -t"
 alias ta="tmux attach"
 alias tl="tmux ls"
+alias ntmux='$LN_HOME/others/tmux_new.sh'
 # Safe RM
 alias rm="trash"
 alias sudorm="/bin/rm"
 # SSH forward
 alias ssh="ssh -X"
+# For server and kungpu
+alias nvis='nvidia-smi'
+alias go='cd /mfs/kunxu/'
 
 plugins=(git extract)
 autoload -U compinit -u && compinit -u
