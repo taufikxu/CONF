@@ -36,10 +36,10 @@ for pid in ${PIDs}; do
     pss="$(ps -o 'uname,pid,start_time,etime,args' -p ${arrPIDs[$COUNTER]})"
     if [ $COUNTER -eq 0 ]; then
         psheader=$(sed -n 1p <<< "${pss}")
-        echo -e " GPU ${psheader}"
+        echo -e " HOSTNAME:GPU ${psheader}"
     fi
     psinfo=$(sed -n 2p <<< "${pss}")
     num=${1:-180}
-    echo -e " \033[0;32m${arrGPUIDs[$COUNTER]}\033[0m   ${psinfo:0:$num}"
+    echo -e " \033[0;32m$HOSTNAME:${arrGPUIDs[$COUNTER]}\033[0m   ${psinfo:0:$num}"
     COUNTER=$((COUNTER + 1))
 done
