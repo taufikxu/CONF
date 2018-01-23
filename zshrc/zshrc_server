@@ -8,7 +8,7 @@ export PATH=/usr/local/cuda/bin:$PATH
 export CUDA_ROOT=/usr/local/cuda
 export CUDA_HOME=/usr/local/cuda
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=/opt/OpenBLAS/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/opt/OpenBLAS/lib:/usr/local/lib:$LD_LIBRARY_PATH
 export PYTHONPATH=/opt/OpenBLAS/lib:$PYTHONPATH
 export PYTHONPATH=/usr/local/cuda/lib64:$PYTHONPATH
 export CPATH=/opt/OpenBLAS:$CPATH
@@ -18,10 +18,10 @@ export CPATH=/opt/OpenBLAS:$CPATH
 # export PYTHONPATH=/home/kunxu/mfs/caffe/python:$PYTHONPATH
 
 # mkl
-source /mfs/jianfei/intel/parallel-2015/bin/iccvars.sh intel64
-source /mfs/jianfei/intel/parallel-2015/mkl/bin/mklvars.sh intel64
-source /mfs/jianfei/intel/parallel-2015/vtune_amplifier_xe_2015.2.0.393444/amplxe-vars.sh
-export LD_LIBRARY_PATH=/mfs/jianfei/intel/parallel-2015/composer_xe_2015.2.164/compiler/lib/intel64:/mfs/jianfei/intel/parallel-2015/composer_xe_2015.2.164/mkl/lib/intel64:$LD_LIBRARY_PATH
+#source /mfs/jianfei/intel/parallel-2015/bin/iccvars.sh intel64
+#source /mfs/jianfei/intel/parallel-2015/mkl/bin/mklvars.sh intel64
+#source /mfs/jianfei/intel/parallel-2015/vtune_amplifier_xe_2015.2.0.393444/amplxe-vars.sh
+#export LD_LIBRARY_PATH=/mfs/jianfei/intel/parallel-2015/composer_xe_2015.2.164/compiler/lib/intel64:/mfs/jianfei/intel/parallel-2015/composer_xe_2015.2.164/mkl/lib/intel64:$LD_LIBRARY_PATH
 
 
 # theano
@@ -40,28 +40,14 @@ export TMPLD_LIBRARY_PATH=$LD_LIBRARY_PATH
 export TMPLIBRARY_PATH=$LIBRARY_PATH
 export TMPCPATH=$CPATH
 
-function usev4 () {
-    export LD_LIBRARY_PATH=/opt/cudnn-v4/lib64:$TMPLD_LIBRARY_PATH
-    export LIBRARY_PATH=/opt/cudnn-v4/lib64:$TMPLIBRARY_PATH
-    export CPATH=/opt/cudnn-v4/include:$TMPCPATH
-}
-function usev5 () {
-    export LD_LIBRARY_PATH=/opt/cudnn-v5/lib64:$TMPLD_LIBRARY_PATH
-    export LIBRARY_PATH=/opt/cudnn-v5/lib64:$TMPLIBRARY_PATH
-    export CPATH=/opt/cudnn-v5/include:$TMPCPATH
-}
-function usev6 () {
-    export LD_LIBRARY_PATH=/opt/cudnn-v6/lib64:$TMPLD_LIBRARY_PATH
-    export LIBRARY_PATH=/opt/cudnn-v6/lib64:$TMPLIBRARY_PATH
-    export CPATH=/opt/cudnn-v6/include:$TMPCPATH
-}
-function usev7 () {
-    export LD_LIBRARY_PATH=/opt/cudnn-v7/lib64:$TMPLD_LIBRARY_PATH
-    export LIBRARY_PATH=/opt/cudnn-v7/lib64:$TMPLIBRARY_PATH
-    export CPATH=/opt/cudnn-v5/include:$TMPCPATH
+
+function usecdn () {
+    export LD_LIBRARY_PATH=/opt/cudnn-v$1/lib64:$TMPLD_LIBRARY_PATH
+    export LIBRARY_PATH=/opt/cudnn-v$1/lib64:$TMPLIBRARY_PATH
+    export CPATH=/opt/cudnn-v$1/include:$TMPCPATH
 }
 function gpus() {
     export CUDA_VISIBLE_DEVICES=$1
 }
-usev6
+usecdn 7
 gpu0
