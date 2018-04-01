@@ -13,7 +13,7 @@ alias ntmux='bash $LN_HOME/others/tmux_new.sh'
 
 alias ansible='ssh juncluster3 "ansible jungpu -a \"nvidia-who\""'
 
-alias monmfs='sshfs jungpu9:/mfs/kunxu/ $HOME/mfs/'
+alias monmfs='sshfs jungpu4:/mfs/kunxu/ $HOME/mfs/'
 alias monana='sshfs jungpu9:/home/kunxu/analysis $HOME/Analysis'
 alias monall='sshfs juncluster4:/mfs $HOME/Results/mfs'
 
