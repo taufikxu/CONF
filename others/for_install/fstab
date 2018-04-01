@@ -12,9 +12,6 @@ UUID=8E88-D66D  /boot/efi       vfat    umask=0077      0       1
 # swap was on /dev/sda6 during installation
 # UUID=b6324ef7-143e-4a2b-9b88-a832ef74b439 none            swap    sw              0       0
 
-UUID=308EF6DF8EF69D12 /home/kunxu/Windows ntfs defaults,uid=1000,gid=1000,umask=002,rw  0 0
-UUID=C67AE6267AE612CB /home/kunxu/Linux ntfs defaults,uid=1000,gid=1000,umask=002,rw 0 0
-UUID=72F0DAEFF0DAB915 /media/kunxu/SWAP ntfs defaults,umask=177,rw  0 0
+UUID=308EF6DF8EF69D12 /home/kunxu/Data ntfs defaults,uid=1000,gid=1000,umask=002,rw  0 0
+UUID=B258057758053B9B /home/kunxu/Misc ntfs defaults,uid=1000,gid=1000,umask=002,rw 0 0
 
-
-/media/kunxu/SWAP/.swap none swap sw 0 0
