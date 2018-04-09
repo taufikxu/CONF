@@ -12,7 +12,7 @@ fi
 $cmd has -t $session 2> /dev/null
 
 if [ $? -ne 0 ]; then
-    $rcmd new -d -n nviw -s $session "watch gpustat"
+    $rcmd new -d -n nviw -s $session "watch --color gpustat --color"
     $rcmd split-window -h -t $session:0
     #$rcmd split-window -v -t $session:0.0 "watch nvidia-who"
     $rcmd resize-pane -t $session:0.0 -x 85
