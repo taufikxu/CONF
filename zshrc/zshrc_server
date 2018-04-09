@@ -2,6 +2,7 @@ export LC_ALL=C
 
 alias env='source $HOME/ENV/bin/activate'
 alias menv='source $HOME/mfs/ENV/ENV/bin/activate'
+alias gs='gpustat --color'
 
 # Add for Cuda
 export PATH=/usr/local/cuda/bin:$PATH
