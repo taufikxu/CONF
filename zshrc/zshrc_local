@@ -2,11 +2,16 @@
 INCLUDE=$LN_HOME/others/include_rsync
 EXCLUDE=$LN_HOME/others/exclude_rsync
 REMOT='jungpu4:/mfs/kunxu'
+CODER='juncluster2:$HOME/workspace'
+CODEL=$HOME/Data/Code
 LOCAL=$HOME/Data/Remote
-alias syupd='rsync -avz --exclude-from=$EXCLUDE --include="*/" --include-from=$INCLUDE --exclude="*" --delete $LOCAL/ $REMOT/'
-alias syup='rsync -avz --exclude-from=$EXCLUDE --include="*/" --include-from=$INCLUDE --exclude="*"  $LOCAL/ $REMOT/'
-alias sydod='rsync -avz --exclude-from=$EXCLUDE  --include="*/" --include-from=$INCLUDE --exclude="*" --delete $REMOT/ $LOCAL/'
-alias sydo='rsync -avz  --exclude-from=$EXCLUDE --include="*/" --include-from=$INCLUDE --exclude="*"  $REMOT/ $LOCAL/'
+alias syupd='rsync -atvz --exclude-from=$EXCLUDE --include="*/" --include-from=$INCLUDE --exclude="*" --delete $LOCAL/ $REMOT/'
+alias syup='rsync -atvz --exclude-from=$EXCLUDE --include="*/" --include-from=$INCLUDE --exclude="*"  $LOCAL/ $REMOT/'
+alias sydod='rsync -atvz --exclude-from=$EXCLUDE  --include="*/" --include-from=$INCLUDE --exclude="*" --delete $REMOT/ $LOCAL/'
+alias sydo='rsync -atvz  --exclude-from=$EXCLUDE --include="*/" --include-from=$INCLUDE --exclude="*"  $REMOT/ $LOCAL/'
+
+alias codedod='rsync -atvzp --exclude=.idea --exclude=.vscode --delete $CODER/ $CODEL/'
+alias codedo='rsync -atvzp --exclude=.idea --exclude=.vscode $CODER/ $CODEL/'
 
 alias env='source $HOME/ENV/bin/activate'
 alias ntmux='bash $LN_HOME/others/tmux_new.sh'
