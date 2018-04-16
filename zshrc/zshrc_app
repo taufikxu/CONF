@@ -53,8 +53,7 @@ alias nvis='nvidia-smi'
 alias go='cd /mfs/kunxu/'
 
 plugins=(git extract)
-autoload -U compinit -u && compinit -u
-
+autoload -U compinit && compinit
 
 # for my bin
 export PATH=$LN_HOME/bin:$PATH
@@ -79,6 +78,8 @@ sudo-command-line() {
 zle -N sudo-command-line
 bindkey "\e\e" sudo-command-line
 source $LN_HOME/zshrc/incr.zsh
+zstyle ':completion:*' menu select
+zstyle ':completion:*:*:cd:*:directory-stack' menu yes select
 
 function INFO(){
     local msg="$1"
@@ -105,3 +106,4 @@ dt () {
     #calc="${calc//x/*}"
     bc -l <<<"scale=10;$@"
 }
+

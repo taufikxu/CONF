@@ -25,7 +25,7 @@ bindkey -M emacs '^?' backward-delete-char-incr
 bindkey -M emacs '^i' expand-or-complete-prefix-incr
 bindkey -M emacs '^[[3~' backward-delete-char-no-show-incr
 
-unsetopt automenu
+# unsetopt automenu
 compdef -d zypper
 compdef -d scp
 compdef -d make
