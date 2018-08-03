@@ -15,7 +15,7 @@ if [ $? -ne 0 ]; then
     $rcmd new -d -n nviw -s $session "watch --color $LN_HOME/bin/gpustat --color"
     $rcmd split-window -h -t $session:0
     #$rcmd split-window -v -t $session:0.0 "watch nvidia-who"
-    $rcmd resize-pane -t $session:0.0 -x 75
+    $rcmd resize-pane -t $session:0.0 -x 80
     $rcmd neww -n zsh -t $session "zsh"
 fi
 

@@ -1,0 +1,3 @@
+#! /usr/bin/env bash
+
+rsync -azv --delete /home/kunxu/mfs/Workspace/ /home/kunxu/workspace/

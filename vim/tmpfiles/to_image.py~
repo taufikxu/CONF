@@ -1,0 +1,14 @@
+#! /usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import numpy as np
+from skimage.io import imsave, imread
+import PIL.Image
+
+dat = np.load("clever.npy")
+for i in range(dat.shape[0]):
+    img = dat[i]
+    img = img.transpose(1, 2, 0)/255.
+    img = PIL.Image.fromarray(img, "RGBA")
+    img.save(str(i) + ".png")
+
