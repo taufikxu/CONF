@@ -12,10 +12,10 @@ ldflags = -L/mfs/jianfei/intel/parallel-2015/composer_xe_2015.2.164/mkl/lib/inte
 root = /usr/local/cuda
 
 [dnn.conv]
-algo_fwd_filter = guess_once
-algo_fwd_data = guess_once
-algo_bwd_filter = none
-algo_bwd_data = guess_once
+algo_fwd_filter = deterministic
+algo_fwd_data = deterministic
+algo_bwd_filter = deterministic
+algo_bwd_data = deterministic
 
 [nvcc]
 fastmath = True
