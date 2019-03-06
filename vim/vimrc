@@ -27,6 +27,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/syntastic'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'chriskempson/base16-vim'
+Plugin 'edkolev/tmuxline.vim'
 
 " Plugin 'flazz/vim-colorschemes'
 Plugin 'NLKNguyen/papercolor-theme'
@@ -175,6 +176,16 @@ let base16colorspace=256
 highlight Comment cterm=bold
 set background=dark
 set t_Co=256
+
+let g:tmuxline_preset = {
+      \'a'    : '#S',
+      \'b'    : '#W',
+      \'c'    : '#H',
+      \'win'  : '#I #W',
+      \'cwin' : '#I #W',
+      \'x'    : '%a',
+      \'y'    : '#W %R',
+      \'z'    : '#H'}
 
 " hi Normal ctermbg=NONE
 colorscheme PaperColor
