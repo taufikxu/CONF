@@ -50,5 +50,5 @@ function usecdn () {
 function gpus() {
     export CUDA_VISIBLE_DEVICES=$1
 }
-usecdn 7
+usecdn 7.4
 gpu0
