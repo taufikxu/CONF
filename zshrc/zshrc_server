@@ -1,17 +1,11 @@
 export LC_ALL=C
 
 alias env='source $HOME/ENV/bin/activate'
-alias menv='source $HOME/mfs/ENV/ENV/bin/activate'
+alias senv='source /home/Data/ENV/bin/activate'
 alias gs='gpustat --color'
 
-# Add for Cuda
-export PATH=/usr/local/cuda/bin:$PATH
-export CUDA_ROOT=/usr/local/cuda
-export CUDA_HOME=/usr/local/cuda
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/opt/OpenBLAS/lib:/usr/local/lib:$LD_LIBRARY_PATH
 export PYTHONPATH=/opt/OpenBLAS/lib:$PYTHONPATH
-export PYTHONPATH=/usr/local/cuda/lib64:$PYTHONPATH
 export CPATH=/opt/OpenBLAS:$CPATH
 
 # add for caffe
@@ -41,6 +35,19 @@ export TMPLD_LIBRARY_PATH=$LD_LIBRARY_PATH
 export TMPLIBRARY_PATH=$LIBRARY_PATH
 export TMPCPATH=$CPATH
 
+# Add for Cuda
+export TMP_PATH=/usr/local/cuda/bin:$PATH
+export TMP_CUDA_ROOT=/usr/local/cuda
+export TMP_CUDA_HOME=/usr/local/cuda
+export TMP_LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH
+export TMP_PYTHONPATH=/usr/local/cuda/lib64:$PYTHONPATH
+
+function usecuda() {
+    export PATH=/usr/local/cuda-$1/bin:$TMP_PATH
+    export CUDA_ROOT=/usr/local/cuda-$1
+    export CUDA_HOME=/usr/local/cuda-$1
+    export LD_LIBRARY_PATH=/usr/local/cuda-$1/lib64:/usr/local/cuda-$1/extras/CUPTI/lib64:$TMP_LD_LIBRARY_PATH
+}
 
 function usecdn () {
     export LD_LIBRARY_PATH=/opt/cudnn-v$1/lib64:$TMPLD_LIBRARY_PATH
@@ -51,4 +58,5 @@ function gpus() {
     export CUDA_VISIBLE_DEVICES=$1
 }
 usecdn 7.4
+usecuda 9.0
 gpu0

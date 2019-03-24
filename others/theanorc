@@ -9,7 +9,7 @@ floatX = float32
 ldflags = -L/mfs/jianfei/intel/parallel-2015/composer_xe_2015.2.164/mkl/lib/intel64 -lmkl_rt
 
 [cuda]
-root = /usr/local/cuda
+root = /usr/local/cuda-9.0
 
 [dnn.conv]
 algo_fwd_filter = deterministic
