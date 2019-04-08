@@ -31,32 +31,50 @@ alias gpu6='export CUDA_VISIBLE_DEVICES=6'
 alias gpu7='export CUDA_VISIBLE_DEVICES=7'
 alias gpu8='export CUDA_VISIBLE_DEVICES=8'
 
-export TMPLD_LIBRARY_PATH=$LD_LIBRARY_PATH
-export TMPLIBRARY_PATH=$LIBRARY_PATH
-export TMPCPATH=$CPATH
 
 # Add for Cuda
 export TMP_PATH=/usr/local/cuda/bin:$PATH
-export TMP_CUDA_ROOT=/usr/local/cuda
-export TMP_CUDA_HOME=/usr/local/cuda
 export TMP_LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH
 export TMP_PYTHONPATH=/usr/local/cuda/lib64:$PYTHONPATH
+export TMPLIBRARY_PATH=$LIBRARY_PATH
+export TMPCPATH=$CPATH
 
-function usecuda() {
-    export PATH=/usr/local/cuda-$1/bin:$TMP_PATH
-    export CUDA_ROOT=/usr/local/cuda-$1
-    export CUDA_HOME=/usr/local/cuda-$1
-    export LD_LIBRARY_PATH=/usr/local/cuda-$1/lib64:/usr/local/cuda-$1/extras/CUPTI/lib64:$TMP_LD_LIBRARY_PATH
+function usecuda9() {
+    export PATH=/usr/local/cuda-9.0/bin:$TMP_PATH
+    export CUDA_ROOT=/usr/local/cuda-9.0
+    export CUDA_HOME=/usr/local/cuda-9.0
+    export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64:/usr/local/cuda-9.0/extras/CUPTI/lib64:$TMP_LD_LIBRARY_PATH
+
+    export LD_LIBRARY_PATH=/opt/cudnn-v7.4/lib64:$LD_LIBRARY_PATH
+    export LIBRARY_PATH=/opt/cudnn-v7.4/lib64:$TMPLIBRARY_PATH
+    export CPATH=/opt/cudnn-v7.4/include:$TMPCPATH
 }
 
-function usecdn () {
-    export LD_LIBRARY_PATH=/opt/cudnn-v$1/lib64:$TMPLD_LIBRARY_PATH
-    export LIBRARY_PATH=/opt/cudnn-v$1/lib64:$TMPLIBRARY_PATH
-    export CPATH=/opt/cudnn-v$1/include:$TMPCPATH
+function usecuda10() {
+    export PATH=/usr/local/cuda-10.0/bin:$TMP_PATH
+    export CUDA_ROOT=/usr/local/cuda-10.0
+    export CUDA_HOME=/usr/local/cuda-10.0
+    export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64:/usr/local/cuda-10.0/extras/CUPTI/lib64:$TMP_LD_LIBRARY_PATH
+
+    export LD_LIBRARY_PATH=/opt/cudnn-v7.5/lib64:$LD_LIBRARY_PATH
+    export LIBRARY_PATH=/opt/cudnn-v7.5/lib64:$TMPLIBRARY_PATH
+    export CPATH=/opt/cudnn-v7.5/include:$TMPCPATH
 }
+
+function usetheano() {
+    export PATH=/usr/local/cuda-9.0/bin:$TMP_PATH
+    export CUDA_ROOT=/usr/local/cuda-9.0
+    export CUDA_HOME=/usr/local/cuda-9.0
+    export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64:/usr/local/cuda-9.0/extras/CUPTI/lib64:$TMP_LD_LIBRARY_PATH
+
+    export LD_LIBRARY_PATH=/opt/cudnn-v7/lib64:$LD_LIBRARY_PATH
+    export LIBRARY_PATH=/opt/cudnn-v7/lib64:$TMPLIBRARY_PATH
+    export CPATH=/opt/cudnn-v7/include:$TMPCPATH
+}
+
 function gpus() {
     export CUDA_VISIBLE_DEVICES=$1
 }
-usecdn 7.4
-usecuda 9.0
+
+usecuda9
 gpu0
