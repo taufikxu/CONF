@@ -1,7 +1,6 @@
 export LC_ALL=C
 
 alias env='source $HOME/ENV/bin/activate'
-alias senv='source /home/Data/VENV/bin/activate'
 alias gs='gpustat --color'
 
 export LD_LIBRARY_PATH=/opt/OpenBLAS/lib:/usr/local/lib
@@ -50,7 +49,7 @@ function usetf1() {
     export LD_LIBRARY_PATH=/opt/cudnn-v$CUDNN_V/lib64:$LD_LIBRARY_PATH
     export LIBRARY_PATH=/opt/cudnn-v$CUDNN_V/lib64:$TMPLIBRARY_PATH
     export CPATH=/opt/cudnn-v$CUDNN_V/include:$TMPCPATH
-    source /home/Data/VENV/bin/activate py3tf1
+    source /home/kunxu/ENV/bin/activate py3tf1
 }
 
 function usept1() {
@@ -64,7 +63,7 @@ function usept1() {
     export LD_LIBRARY_PATH=/opt/cudnn-v$CUDNN_V/lib64:$LD_LIBRARY_PATH
     export LIBRARY_PATH=/opt/cudnn-v$CUDNN_V/lib64:$TMPLIBRARY_PATH
     export CPATH=/opt/cudnn-v$CUDNN_V/include:$TMPCPATH
-    source /home/Data/VENV/bin/activate py3pt1
+    source /home/kunxu/ENV/bin/activate py3pt1
 }
 
 function usetheano() {
@@ -78,27 +77,14 @@ function usetheano() {
     export LD_LIBRARY_PATH=/opt/cudnn-v$CUDNN_V/lib64:$LD_LIBRARY_PATH
     export LIBRARY_PATH=/opt/cudnn-v$CUDNN_V/lib64:$TMPLIBRARY_PATH
     export CPATH=/opt/cudnn-v$CUDNN_V/include:$TMPCPATH
-    source /home/Data/VENV/bin/activate theano
+    source /home/kunxu/ENV/bin/activate theano
 }
 
-function usept3() {
-    CUDA_V=8.0
-    CUDNN_V=7
-    export PATH=/usr/local/cuda-$CUDA_V/bin:$TMP_PATH
-    export CUDA_ROOT=/usr/local/cuda-$CUDA_V
-    export CUDA_HOME=/usr/local/cuda-$CUDA_V
-    export LD_LIBRARY_PATH=/usr/local/cuda-$CUDA_V/lib64:/usr/local/cuda-$CUDA_V/extras/CUPTI/lib64:$TMP_LD_LIBRARY_PATH
-
-    export LD_LIBRARY_PATH=/opt/cudnn-v$CUDNN_V/lib64:$LD_LIBRARY_PATH
-    export LIBRARY_PATH=/opt/cudnn-v$CUDNN_V/lib64:$TMPLIBRARY_PATH
-    export CPATH=/opt/cudnn-v$CUDNN_V/include:$TMPCPATH
-    source /home/Data/VENV/bin/activate py3pt0.3
-}
 function gpus() {
     export CUDA_VISIBLE_DEVICES=$1
 }
 
-usetf1
+usept1
 gpu0
 
 ulimit -n 8192
