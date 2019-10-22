@@ -17,6 +17,8 @@ export CPATH=/opt/OpenBLAS:$CPATH
 #source /mfs/jianfei/intel/parallel-2015/vtune_amplifier_xe_2015.2.0.393444/amplxe-vars.sh
 #export LD_LIBRARY_PATH=/mfs/jianfei/intel/parallel-2015/composer_xe_2015.2.164/compiler/lib/intel64:/mfs/jianfei/intel/parallel-2015/composer_xe_2015.2.164/mkl/lib/intel64:$LD_LIBRARY_PATH
 
+# For Pytorch
+export TORCH_HOME=/home/LargeData/torch_home/
 
 # theano
 export THEANORC=$LN_HOME/others/theanorc
