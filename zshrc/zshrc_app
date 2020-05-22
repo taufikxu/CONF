@@ -1,5 +1,5 @@
-# Assuming lm-sensors is installed and configured
-# . /etc/zsh_command_not_found
+export LC_ALL=en_US.UTF-8  
+export LANG=en_US.UTF-8
 
 # If not running interactively, don't do anything
 case $- in
@@ -46,20 +46,13 @@ alias ntmux='$LN_HOME/others/tmux_new.sh'
 # Safe RM
 alias rm="trash"
 alias sudorm="/bin/rm"
-# SSH forward
 alias ssh="ssh -X"
-# For server and kungpu
 alias nvis='nvidia-smi'
-alias go='cd /mfs/kunxu/'
 
 plugins=(git extract)
 autoload -U compinit && compinit
 
-# for my bin
-export PATH=$LN_HOME/bin:$PATH
 # User configuration
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-export DISABLE_AUTO_UPDATE=true
 ZSH_THEME="theme"
 source $ZSH/oh-my-zsh.sh
 
@@ -80,30 +73,4 @@ bindkey "\e\e" sudo-command-line
 source $LN_HOME/zshrc/incr.zsh
 zstyle ':completion:*' menu select
 zstyle ':completion:*:*:cd:*:directory-stack' menu yes select
-
-function INFO(){
-    local msg="$1"
-    timeAndDate=`date +%Y-%m-%d:%H:%M:%S`
-    echo "[$timeAndDate] [INFO]  $msg"
-}
-function LOG(){
-    local msg="$1"
-    timeAndDate=`date +%Y-%m-%d:%H:%M:%S`
-    echo "[$timeAndDate] $msg"
-}
-function run(){
-    local cmd="$1"
-    $cmd
-}
-
-dt () {
-    NUM=${1:-5}
-    tail -$NUM $HOME/mfs/ENV/TMUX.list
-}
-
-= () {
-    #calc="${@//p/+}"
-    #calc="${calc//x/*}"
-    bc -l <<<"scale=10;$@"
-}
 

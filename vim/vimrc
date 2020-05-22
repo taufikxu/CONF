@@ -239,10 +239,10 @@ nnoremap <silent> ^ g^
 nnoremap <silent> $ g$
 
 " Deal with multiple entries within helpgrep
-nmap <RIGHT> :cnext<cr>
-nmap <DOWN> :cnfile<cr>
-nmap <UP> :cpfile<cr>
-nmap <LEFT> :cprev<cr>
+" nmap <RIGHT> :cnext<cr>
+" nmap <DOWN> :cnfile<cr>
+" nmap <UP> :cpfile<cr>
+" nmap <LEFT> :cprev<cr>
 
 
 " scroll the viewport faster

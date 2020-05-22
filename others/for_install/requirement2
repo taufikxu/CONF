@@ -15,7 +15,7 @@ tqdm
 pillow
 path.py
 coloredlogs
-imageio
+imageio==2.3
 seaborn
 statsmodels
 pyyaml

@@ -1,9 +1,7 @@
-export LC_ALL=C
-
 alias env='source $HOME/ENV/bin/activate'
 alias gs='gpustat --color'
 
-export LD_LIBRARY_PATH=/opt/OpenBLAS/lib:/usr/local/lib
+export LD_LIBRARY_PATH=/usr/mpi/gcc/openmpi-4.0.2a1/lib:/usr/mpi/gcc/openmpi-4.0.2rc3/lib:/opt/OpenBLAS/lib:/usr/local/lib:/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
 export PYTHONPATH=/opt/OpenBLAS/lib:$PYTHONPATH
 export CPATH=/opt/OpenBLAS:$CPATH
 
@@ -35,26 +33,12 @@ alias gpu8='export CUDA_VISIBLE_DEVICES=8'
 
 # Add for Cuda
 export TMP_PATH=/usr/local/cuda/bin:$PATH
-export TMP_LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH
+export TMP_LD_LIBRARY_PATH=$LD_LIBRARY_PATH
 export TMP_PYTHONPATH=/usr/local/cuda/lib64:$PYTHONPATH
 export TMPLIBRARY_PATH=$LIBRARY_PATH
 export TMPCPATH=$CPATH
 
-function usetf1() {
-    CUDA_V=9.0
-    CUDNN_V=7.4
-    export PATH=/usr/local/cuda-$CUDA_V/bin:$TMP_PATH
-    export CUDA_ROOT=/usr/local/cuda-$CUDA_V
-    export CUDA_HOME=/usr/local/cuda-$CUDA_V
-    export LD_LIBRARY_PATH=/usr/local/cuda-$CUDA_V/lib64:/usr/local/cuda-$CUDA_V/extras/CUPTI/lib64:$TMP_LD_LIBRARY_PATH
-
-    export LD_LIBRARY_PATH=/opt/cudnn-v$CUDNN_V/lib64:$LD_LIBRARY_PATH
-    export LIBRARY_PATH=/opt/cudnn-v$CUDNN_V/lib64:$TMPLIBRARY_PATH
-    export CPATH=/opt/cudnn-v$CUDNN_V/include:$TMPCPATH
-    source /home/kunxu/ENV/bin/activate py3tf1
-}
-
-function usept1() {
+function usetorch() {
     CUDA_V=10.1
     CUDNN_V=7.6
     export PATH=/usr/local/cuda-$CUDA_V/bin:$TMP_PATH
@@ -65,12 +49,12 @@ function usept1() {
     export LD_LIBRARY_PATH=/opt/cudnn-v$CUDNN_V/lib64:$LD_LIBRARY_PATH
     export LIBRARY_PATH=/opt/cudnn-v$CUDNN_V/lib64:$TMPLIBRARY_PATH
     export CPATH=/opt/cudnn-v$CUDNN_V/include:$TMPCPATH
-    source /home/kunxu/ENV/bin/activate py3pt1
+    source $HOME/ENV/bin/activate torch
 }
 
-function usetheano() {
-    CUDA_V=9.0
-    CUDNN_V=7.4
+function usepy3() {
+    CUDA_V=$1
+    CUDNN_V=$2
     export PATH=/usr/local/cuda-$CUDA_V/bin:$TMP_PATH
     export CUDA_ROOT=/usr/local/cuda-$CUDA_V
     export CUDA_HOME=/usr/local/cuda-$CUDA_V
@@ -79,31 +63,13 @@ function usetheano() {
     export LD_LIBRARY_PATH=/opt/cudnn-v$CUDNN_V/lib64:$LD_LIBRARY_PATH
     export LIBRARY_PATH=/opt/cudnn-v$CUDNN_V/lib64:$TMPLIBRARY_PATH
     export CPATH=/opt/cudnn-v$CUDNN_V/include:$TMPCPATH
-    source /home/kunxu/ENV/bin/activate theano
-}
-
-function usechainer() {
-    CUDA_V=8.0
-    CUDNN_V=5.1
-    export PATH=/usr/local/cuda-$CUDA_V/bin:$TMP_PATH
-    export CUDA_ROOT=/usr/local/cuda-$CUDA_V
-    export CUDA_PATH=/usr/local/cuda-$CUDA_V
-    export CUDA_HOME=/usr/local/cuda-$CUDA_V
-    export LD_LIBRARY_PATH=/usr/local/cuda-$CUDA_V/lib64:/usr/local/cuda-$CUDA_V/extras/CUPTI/lib64:$TMP_LD_LIBRARY_PATH
-
-    export CFLAGS=-I/opt/cudnn-v$CUDNN_V/include
-    export LDFLAGS=-L/opt/cudnn-v$CUDNN_V/lib64
-    export LD_LIBRARY_PATH=/opt/cudnn-v$CUDNN_V/lib64:$LD_LIBRARY_PATH
-    export LIBRARY_PATH=/opt/cudnn-v$CUDNN_V/lib64:$TMPLIBRARY_PATH
-    export CPATH=/opt/cudnn-v$CUDNN_V/include:$TMPCPATH
-    source /home/kunxu/ENV/bin/activate chainer3
 }
 
 function gpus() {
     export CUDA_VISIBLE_DEVICES=$1
 }
 
-usept1
+usetorch
 gpu0
 
 ulimit -n 8192
