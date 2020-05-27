@@ -22,6 +22,7 @@ seaborn
 statsmodels
 pyyaml
 tensorboardX
+tensorboard
 opencv-python
 trash
 black

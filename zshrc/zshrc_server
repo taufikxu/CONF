@@ -52,7 +52,7 @@ function usetorch() {
     source $HOME/ENV/bin/activate torch
 }
 
-function usepy3() {
+function useenv() {
     CUDA_V=$1
     CUDNN_V=$2
     export PATH=/usr/local/cuda-$CUDA_V/bin:$TMP_PATH
@@ -72,4 +72,4 @@ function gpus() {
 usetorch
 gpu0
 
-ulimit -n 8192
+ulimit -n 4096

@@ -57,7 +57,8 @@ ZSH_THEME="theme"
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
- export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
+export PATH=$LN_HOME/bin/:$PATH
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
