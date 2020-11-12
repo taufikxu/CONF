@@ -39,7 +39,7 @@ export TMPLIBRARY_PATH=$LIBRARY_PATH
 export TMPCPATH=$CPATH
 
 function usetorch() {
-    CUDA_V=10.1
+    CUDA_V=10.2
     CUDNN_V=7.6
     export PATH=/usr/local/cuda-$CUDA_V/bin:$TMP_PATH
     export CUDA_ROOT=/usr/local/cuda-$CUDA_V
