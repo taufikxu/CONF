@@ -1,14 +1,13 @@
 # include shared zshrc if it exists
 
-export LN_HOME=$HOME/CONF/
-instance='zshrc_server'
+export LN_HOME=$HOME/Deps/CONF/
 
-if [ -f "$LN_HOME/zshrc/$instance" ]; then
+if [ -f "$LN_HOME/zshrc/zshrc_server" ]; then
     export ZSH=$LN_HOME/zshrc/oh-my-zsh
     export ZSH_CUSTOM=$LN_HOME/zshrc
     
     source $LN_HOME/zshrc/zshrc_app
-    source $LN_HOME/zshrc/$instance
+    source $LN_HOME/zshrc/zshrc_server
 else
     echo "\n$(tput setaf 3)WARNING!! shared zshrc not loaded.$(tput sgr 0)\n"
 fi

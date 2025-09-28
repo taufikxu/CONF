@@ -42,7 +42,7 @@ alias tmux="tmux -2 -u"
 alias tat="tmux attach -t"
 alias ta="tmux attach"
 alias tl="tmux ls"
-alias ntmux='$LN_HOME/others/tmux_new.sh'
+alias ntmux='$LN_HOME/bin/tmux_new.sh'
 # Safe RM
 alias rm="trash"
 alias sudorm="/bin/rm"

@@ -5,32 +5,6 @@ export LD_LIBRARY_PATH=/usr/mpi/gcc/openmpi-4.0.2a1/lib:/usr/mpi/gcc/openmpi-4.0
 export PYTHONPATH=/opt/OpenBLAS/lib:$PYTHONPATH
 export CPATH=/opt/OpenBLAS:$CPATH
 
-# add for caffe
-# export PATH=/home/kunxu/mfs/caffe/build/tools/:$PATH
-# export PYTHONPATH=/home/kunxu/mfs/caffe/python:$PYTHONPATH
-
-# mkl
-#source /mfs/jianfei/intel/parallel-2015/bin/iccvars.sh intel64
-#source /mfs/jianfei/intel/parallel-2015/mkl/bin/mklvars.sh intel64
-#source /mfs/jianfei/intel/parallel-2015/vtune_amplifier_xe_2015.2.0.393444/amplxe-vars.sh
-#export LD_LIBRARY_PATH=/mfs/jianfei/intel/parallel-2015/composer_xe_2015.2.164/compiler/lib/intel64:/mfs/jianfei/intel/parallel-2015/composer_xe_2015.2.164/mkl/lib/intel64:$LD_LIBRARY_PATH
-
-# For Pytorch
-export TORCH_HOME=/home/LargeData/torch_home/
-
-# theano
-export THEANORC=$LN_HOME/others/theanorc
-alias gpu0='export CUDA_VISIBLE_DEVICES=0'
-alias gpu1='export CUDA_VISIBLE_DEVICES=1'
-alias gpu2='export CUDA_VISIBLE_DEVICES=2'
-alias gpu3='export CUDA_VISIBLE_DEVICES=3'
-alias gpu4='export CUDA_VISIBLE_DEVICES=4'
-alias gpu5='export CUDA_VISIBLE_DEVICES=5'
-alias gpu6='export CUDA_VISIBLE_DEVICES=6'
-alias gpu7='export CUDA_VISIBLE_DEVICES=7'
-alias gpu8='export CUDA_VISIBLE_DEVICES=8'
-
-
 # Add for Cuda
 export TMP_PATH=/usr/local/cuda/bin:$PATH
 export TMP_LD_LIBRARY_PATH=$LD_LIBRARY_PATH
@@ -69,7 +43,5 @@ function gpus() {
     export CUDA_VISIBLE_DEVICES=$1
 }
 
-usetorch
-gpu0
-
+# usetorch
 ulimit -n 4096
